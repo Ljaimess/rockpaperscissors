@@ -21,15 +21,21 @@ body {
   
 }
 
-.navbar-nav {
-  margin-left: 60%;
+/* ----HEADER----- */
+
+.header {
+  text-align: center;
+  
+  background-color: black;
+  margin-top: 10%;
+  
 }
 
 /* ----- FOOTER ----- */
 
 footer{
   background-color: black;
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;   
 }

@@ -14,6 +14,7 @@ const App = () => {
   let [result, setResult] = useState(null);
   //the array that holds the values
   let options = ["rock", "paper", "scissors"];
+  
 
   //handles the click and sets the playerChoice as the value that the player chooses
   let handleClick = (value) => {
@@ -29,40 +30,42 @@ const App = () => {
   };
 
   useEffect(() => {
-
-    switch (playerChoice + compChoice) {
-      case 'scissorspaper':
-      case 'rockscissors':
-      case 'paperrock':
-        setResult('YOU WIN!')
-        break
-      case 'paperscissors':
-      case 'scissorsrock':
-      case 'rockpaper':
-        setResult('YOU LOSE!')
-        break
-      case 'rockrock':
-      case 'paperpaper':
-      case 'scissorsscissors':
-        setResult('ITS A DRAW!')
-        break
-    }
-
+    {
+      switch (playerChoice + compChoice) {
+        case 'scissorspaper':
+        case 'rockscissors':
+        case 'paperrock':
+          setResult('YOU WIN!')
+          break
+        case 'paperscissors':
+        case 'scissorsrock':
+        case 'rockpaper':
+          setResult('YOU LOSE!')
+          break
+        case 'rockrock':
+        case 'paperpaper':
+        case 'scissorsscissors':
+          setResult('ITS A DRAW!')
+          break
+      }
+    };
   }, [compChoice, playerChoice])
 
   return (
 
     <div>
       <NavBar />
-      {options.map((option, index) =>
-        <button key={index} onClick={() => handleClick(option)}>
-          {option}
-        </button>
-      )}
 
-      <h2>You chose: {playerChoice}</h2>
-      <h2>They chose: {compChoice}</h2>
-      <h1>{result}</h1>
+      <div className="jumbotron jumbotron-fluid header">
+        {options.map((option, index) =>
+          <button key={index} onClick={() => handleClick(option)}>
+            {option}
+          </button>
+        )}
+        <h2>You chose: {playerChoice}</h2>
+        <h2>They chose: {compChoice}</h2>
+        <h1>{result}</h1>
+      </div>
       <Footer />
     </div>
 
