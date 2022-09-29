@@ -30,7 +30,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    {
+    
       switch (playerChoice + compChoice) {
         case 'scissorspaper':
         case 'rockscissors':
@@ -48,7 +48,7 @@ const App = () => {
           setResult('ITS A DRAW!')
           break
       }
-    };
+    
   }, [compChoice, playerChoice])
 
   return (
